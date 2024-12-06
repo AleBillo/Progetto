@@ -9,6 +9,8 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/images', express.static('images'));
+
 
 // Route per i vinili
 app.use('/api/vinyls', vinylsRoutes);
