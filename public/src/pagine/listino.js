@@ -1,10 +1,15 @@
+
+
 export default {
+    
   template: `
+   <link rel="stylesheet" type="text/css" href="/style/main.css">
   <div class="container my-4">
       <h1 class="text-center">Listino Vinili</h1>
       <div v-if="vinyls.length > 0" class="row">
           <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col-md-4 my-3">
               <div class="card">
+              <img :src="'/media/' + vinyl.image_url" class="card-img-top" alt="Immagine Vinile"> 
                   <div class="card-body">
                       <h5 class="card-title">{{ vinyl.vinyl_name }}</h5>
                       <p class="card-text">Artista: {{ vinyl.artist }}</p>
