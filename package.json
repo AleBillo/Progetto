@@ -1,0 +1,18 @@
+{
+  "name": "progetto",
+  "version": "1.0.0",
+  "description": "Sito fatto per l'esame di \"Ingegneria dei Sistemi Web\" del 2° anno accademico del corso: Tecnologie dei Sistemi Informatici 2024/2025 - Università di Bologna (Sede di Cesena)\r # Mockup del progetto:\r https://www.figma.com/proto/2SSDguBa7N21bqAmhD7Glq/Progetto?node-id=5-15&t=8dQYBeHXZ8f0h6CT-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}
