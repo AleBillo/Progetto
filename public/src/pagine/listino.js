@@ -15,6 +15,12 @@ export default {
                       <p class="card-text">Artista: {{ vinyl.artist }}</p>
                       <p class="card-text">Anno: {{ vinyl.year }}</p>
                       <p class="card-text">Prezzo: €{{ vinyl.price }}</p>
+                       <button 
+                           class = "btn btn-sm"
+                          :class ="{'btn-success': isInCart(vinyl), 'btn-primary': !isInCart(vinyl)}"
+                          @click="addToCart(vinyl)">
+                          {{ isInCart(vinyl) ?'Aggiunto' : 'Aggiungi al Carrello'}}
+                       </button>
                   </div>
               </div>
           </div>
@@ -26,7 +32,8 @@ export default {
   `,
   data() {
       return {
-          vinyls: [] // Contiene i vinili
+          vinyls: [], // Contiene i vinili
+          carrello: [] //contiene i prodotti selezionati
       };
   },
   created() {
@@ -38,5 +45,20 @@ export default {
           .catch(error => {
               console.error('Errore nel recupero dei vinili:', error);
           });
-  }
+  },
+
+  methods: {
+   
+    isInCart(vinyl) {
+        return this.carrello.some(item => item.id_vinyl === vinyl.id_vinyl);
+    },
+    
+    
+    addToCart(vinyl) {
+        if(!this.isInCart(vinyl)) {
+           this.carrello.push(vinyl) 
+            localStorage.setItem(('carrello'), JSON.stringify(this.carrello));  
+        }
+    }
+} 
 };
