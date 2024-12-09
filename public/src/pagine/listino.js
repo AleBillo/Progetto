@@ -5,7 +5,7 @@ export default {
   template: `
    <link rel="stylesheet" type="text/css" href="/style/main.css">
   <div class="container my-4">
-      <h1 class="text-center">Listino Vinili</h1>
+      <h1 class="text-center text-light">Il nostro listino dei vinili</h1>
       <div v-if="vinyls.length > 0" class="row">
           <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col-md-4 my-3">
               <div class="card">
