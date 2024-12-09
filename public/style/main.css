@@ -28,9 +28,9 @@ body {
 
 .login-container {
   background-color: #2B59C3;
-  padding: 30px 20px;
+  padding: 50px 30px;
   border-radius: 15px;
-  width: 350px;
+  width: 500px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -99,11 +99,22 @@ body {
 }
 
 html, body {
-  height: 100%; /* Assicurati che il body riempia tutta la viewport */
-  margin: 0;
+    height: 100%; /* Assicurati che il body riempia tutta la viewport */
+    margin: 0;
 }
 
 footer {
-  margin-top: auto; /* Spinge il footer in fondo */
+    margin-top: auto; /* Spinge il footer in fondo */
 }
+
+.bottoneindex{
+  background-color: #d8ac29;
+
+}
+
+.bottoneindex:hover{
+  background-color: #d8ac29;
+  color: #fff;
+}
+
 

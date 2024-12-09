@@ -3,12 +3,12 @@ const Home = {
         `
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <img src="./media/favicon.png" style="width: 450px;" alt="Logo">
+      <div class="col-md-5 p-lg-5 mx-auto my-0">
+      <img src="./media/logo1.png" style="width: 450px;" alt="Logo">
       </div>
     <div>
 
-    <div class="col-md-12 ">
+    <div class="col-md-12 mt-4">
     <div class="indexbg rounded text-center text-white overflow-hidden mx-auto">
         <div class="mb-3">
             <h2 class="display-5">"Il suono del vinile, l'emozione di sempre."</h2>
@@ -16,6 +16,11 @@ const Home = {
         </div>
     </div>
    </div>
+
+     
+    <router-link to="/faq">
+        <button class="btn bottoneindex btn-lg mt-3">Scopri di più</button>
+    </router-link>
 
     `
    

@@ -1,7 +1,7 @@
 export default {
   template: `
 
-    <div class="login-container container-fluid">
+    <div class="login-container container-fluid mt-5">
     <form class="login-form">
       <label for="email">EMAIL</label>
       <input type="email" id="email" placeholder="Inserisci la tua email" required />
@@ -13,7 +13,10 @@ export default {
       
       <p class="separator">Oppure</p>
       
+      <router-link to="/registra">
       <button type="button" class="btn-register">REGISTRATI</button>
+      </router-link>
+      
     </form>
   </div>
    
