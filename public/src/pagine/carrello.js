@@ -1,9 +1,9 @@
 export default {
   template: `
 
-   <div class="carrello-container container-fluid">
+   <div class="carrello-container container container-fluid">
    
-    <div class="col md-8">
+    <div class="container col md-8">
         <h1 class="text-center text-light">Il tuo carrello</h1>
         <div v-if="carrello.length > 0" class="row">
             <div v-for="item in carrello" :key="item.id_vinyl" class="col-md-4 my-3">

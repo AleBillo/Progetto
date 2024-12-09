@@ -1,10 +1,15 @@
 export default {
     template: `
-   <div class="container-fluid containeradmin">
+   <div class=" container container-fluid containeradmin">
         <h1 class="text-center text-light">Salve Admin</h1>
+        <h4 class="text-center text-light">Apportare delle modifiche?</h4>
         <div class="text-center">
             <router-link to="/login">
                 <button type="button" class="btn btn-lg btnlogout">Logout</button>
+                    
+                <div class="text-center mx-2">
+                    <button @click="showAddForm = true" class="btn btn-success btn-lg">Aggiungi Vinile</button>
+                </div>
             </router-link>
         </div>
 
@@ -114,10 +119,7 @@ export default {
                 <p>Nessun vinile trovato!</p>
             </div>
 
-            <!-- Pulsante per aggiungere un vinile -->
-            <div class="text-center my-4">
-                <button @click="showAddForm = true" class="btn btn-success btn-lg">Aggiungi Vinile</button>
-            </div>
+           
         </div>
     </div>
     `,
