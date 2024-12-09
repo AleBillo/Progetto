@@ -20,28 +20,41 @@
 
 <body class="vh-100 overflow-auto">
     <div id="app">
-        <nav class="navbar bg-dark" aria-label="Main navigation">
+        <nav class="navbar bg-dark navbar-dark" aria-label="Main navigation">
             <div class="container-fluid">
-                <img src="/media/favicon.png" style="width: 70px;" class="navbar-brand" alt="Logo">
-                <div class="row text-center">
-                    <div class="col-md-2 col-6 ">
-                        <router-link class=" btn btn-dark btn-lg text-light font-monospace decorazione" to="/">HOME</router-link>
-                    </div>
-                    <div class="col-md-2 col-6">
-                        <router-link class=" btn btn-dark btn-lg text-light font-weight-normal font-monospace decorazione" to="/faq">FAQ</router-link>
-                    </div>
-                    <div class="col-md-2 col-6 ">
-                        <router-link class="btn btn-dark btn-lg text-light font-monospace decorazione" to="/login">LOGIN</router-link>
-                    </div>
-                    <div class="col-md-2 col-6 ">
-                        <router-link class=" btn btn-dark btn-lg text-light font-monospace decorazione" to="/listino">LISTINO</router-link>
-                    </div>
-                    <div class="col-md-2 col-6 ">
-                        <router-link class=" btn btn-dark btn-lg text-light font-monospace decorazione" to="/carrello">CARRELLO</router-link>
-                    </div>
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="/media/favicon.png" alt="Logo" style="width: 70px;">
+                </a>
+        
+                <!-- Bottone del menu ad hamburger -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Elementi della navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item">
+                            <router-link class="nav-link text-light font-monospace" to="/">HOME</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link text-light font-monospace" to="/faq">FAQ</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link text-light font-monospace" to="/login">LOGIN</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link text-light font-monospace" to="/listino">LISTINO</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link text-light font-monospace" to="/carrello">CARRELLO</router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
+        
 
         <router-view></router-view>
     </div>
