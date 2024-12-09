@@ -1,9 +1,7 @@
-
-
 export default {
     
   template: `
-   <link rel="stylesheet" type="text/css" href="/style/main.css">
+   
   <div class="container my-4">
       <h1 class="text-center text-light">Il nostro listino dei vinili</h1>
       <div v-if="vinyls.length > 0" class="row">

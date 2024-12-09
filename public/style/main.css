@@ -40,13 +40,13 @@ body {
 }
 
 .login-form label {
-  color: #fff;
+  color: #F9F8F8;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 .login-form input {
-  background-color: #fff; /* Sfondo bianco */
+  background-color: #F9F8F8; /* Sfondo bianco */
   color: #000; /* Testo nero */
   margin-bottom: 15px;
   padding: 10px;
@@ -64,7 +64,7 @@ body {
 
 .btn-login {
   background-color: #28a745;
-  color: #fff;
+  color: #F9F8F8;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -79,7 +79,7 @@ body {
 
 .separator {
   text-align: center;
-  color: #fff;
+  color: #F9F8F8;
   margin-bottom: 15px;
 }
 
@@ -95,7 +95,7 @@ body {
 
 .btn-register:hover {
   background-color: #d8ac29;
-  color: #fff;
+  color: #F9F8F8;
 }
 
 html, body {
@@ -114,7 +114,7 @@ footer {
 
 .bottoneindex:hover{
   background-color: #d8ac29;
-  color: #fff;
+  color: #F9F8F8;
 }
 
 
@@ -131,12 +131,65 @@ footer {
 
 .btnback{
 
-  color: #ffffff;
+  color: #F9F8F8;
 
 }
 .btnback:hover{
 
-  background-color: #ffffff;
+  background-color: #F9F8F8;
   color: #000000;
+}
 
+.carrello-container {
+  background-color: #141414;
+  padding: 50px 30px;
+  border-radius: 15px;
+  width: 1200px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.containeradmin{
+
+  background-color: #141414;
+  padding: 50px 30px;
+  border-radius: 15px;
+  width: 1200px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+
+
+}
+
+.modifica{
+
+  background-color:#F8C630 ;
+  color: #141414;
+  padding: 10px;
+  border: 2px solid #F8C630;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.elimina{
+
+  background-color:#F71735 ;
+  color: #F9F8F8;
+  padding: 10px;
+  border: 2px solid #F71735;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.btnlogout{
+
+  color: #F9F8F8;
+
+}
+.btnlogout:hover{
+
+  background-color: #F71735;
+  color: #F9F8F8;
 }
