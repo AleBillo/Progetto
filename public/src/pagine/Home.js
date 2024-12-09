@@ -1,10 +1,10 @@
-const Index = {
+const Home = {
     template:
         `
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <img src="/media/LOGO.png" style="width: 450px;" alt="Logo">
+      <img src="./media/LOGO.png" style="width: 450px;" alt="Logo">
       </div>
     <div>
 
@@ -21,4 +21,4 @@ const Index = {
    
 };
 
-export default Index;
+export default Home;
