@@ -98,3 +98,12 @@ body {
   color: #fff;
 }
 
+html, body {
+  height: 100%; /* Assicurati che il body riempia tutta la viewport */
+  margin: 0;
+}
+
+footer {
+  margin-top: auto; /* Spinge il footer in fondo */
+}
+
