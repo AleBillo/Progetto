@@ -118,3 +118,25 @@ footer {
 }
 
 
+.accordion-button {
+  background-color: #F8C630; /* Colore di sfondo giallo */
+  color: black; /* Testo nero */
+  font-weight: bold; /* Testo in grassetto */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #F8C630; /* Colore di sfondo quando la sezione è aperta */
+  color: black; /* Testo nero */
+}
+
+.btnback{
+
+  color: #ffffff;
+
+}
+.btnback:hover{
+
+  background-color: #ffffff;
+  color: #000000;
+
+}

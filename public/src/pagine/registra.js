@@ -15,6 +15,15 @@ export default {
         
         
         <button type="button" class="btn-register">REGISTRATI</button>
+
+        <p class="separator mt-4">Oppure</p>
+
+        <div class="text-center">
+        <router-link to="/login">
+        <button type="button" class="btn btn-lg btnback">Torna indietro</button>
+        </router-link>
+        </div>
+
       </form>
     </div>
      

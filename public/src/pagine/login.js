@@ -13,11 +13,11 @@ export default {
       
       <p class="separator">Oppure</p>
       
-       <div class="text-center">
-      <router-link to="/registra">
+      <div class="text-center">
+        <router-link to="/registra">
         <button type="button" class="btn btn-lg mt-3 btn-register">REGISTRATI</button>
-      </router-link>
-    </div>
+        </router-link>
+      </div>
       
     </form>
   </div>
