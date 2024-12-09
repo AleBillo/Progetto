@@ -7,10 +7,12 @@ export default {
             <router-link to="/login">
                 <button type="button" class="btn btn-lg btnlogout">Logout</button>
                     
-                <div class="text-center mx-2">
+               
+            </router-link>
+
+             <div class="text-center mx-2">
                     <button @click="showAddForm = true" class="btn btn-success btn-lg">Aggiungi Vinile</button>
                 </div>
-            </router-link>
         </div>
 
         <!-- Modulo di modifica vinile -->
