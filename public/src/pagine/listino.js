@@ -45,6 +45,8 @@ export default {
           .catch(error => {
               console.error('Errore nel recupero dei vinili:', error);
           });
+
+          this.carrello = JSON.parse(localStorage.getItem('carrello')) || [];
   },
 
   methods: {
