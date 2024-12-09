@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 06, 2024 alle 20:56
+-- Creato il: Dic 09, 2024 alle 17:57
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -99,7 +99,8 @@ INSERT INTO `vinyls` (`id_vinyl`, `vinyl_name`, `artist`, `price`, `year`, `cate
 (7, 'Abbey Road', 'The Beatles', 29.99, 1969, 1, 'Abbey_road.jpg'),
 (8, 'The College Dropout', 'Kanye West', 27.50, 2004, 3, 'The_college_dropout.jpg'),
 (9, 'Illmatic', 'Nas', 24.99, 1994, 2, 'Illmatic.jpg'),
-(10, 'Take Five', 'Dave Brubeck', 22.00, 1959, 4, 'Take_five.jpg');
+(10, 'Take Five', 'Dave Brubeck', 22.00, 1959, 4, 'Take_five.jpg'),
+(11, 'DAMN.', 'Kendrick Lamar', 26.99, 2017, 2, 'DAMN.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
