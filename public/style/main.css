@@ -1,24 +1,33 @@
 
 .img-icon {
-  width: 40px; /* Imposta la larghezza desiderata */
-  height: 40px; /* Imposta l'altezza desiderata */
+  width: 30px; /* Imposta la larghezza desiderata */
+  height: 30px; /* Imposta l'altezza desiderata */
   cursor: pointer; /* Cambia il cursore al passaggio */
 }
 
 
 
+body {
+  background-color: #141414; /* Colore di esempio */
+}
 
+.navbg1{
+  background-color: #2B59C3;
+}
 
-
-.boxindex{
+.indexbg{
   
-  background: rgb(22, 153, 239);
+  background-color: #141414;
+  border-color: #F71735;
+}
 
+.footerbg{
+  background-color: #2B59C3;
 }
 
 
 .login-container {
-  background-color: #007bff;
+  background-color: #2B59C3;
   padding: 30px 20px;
   border-radius: 15px;
   width: 350px;
@@ -75,17 +84,17 @@
 }
 
 .btn-register {
-  background-color:#76a728 ;
-  color: #ffffff;
+  background-color:#F8C630 ;
+  color: #141414;
   padding: 10px;
-  border: 2px solid #76a728;
+  border: 2px solid #F8C630;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-register:hover {
-  background-color: #7ba728a2;
+  background-color: #d8ac29;
   color: #fff;
 }
 
