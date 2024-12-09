@@ -14,7 +14,7 @@ export default {
         <input class="input" type="password" id="password" placeholder="Inserisci la tua password" required />
         
         
-        <button type="button" class="btn-register">REGISTRATI</button>
+        <button type="submit" class="btn-register">REGISTRATI</button>
 
         <p class="separator mt-4">Oppure</p>
 
