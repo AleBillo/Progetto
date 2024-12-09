@@ -59,6 +59,7 @@ export default {
                             <p class="card-text">Artista: {{ vinyl.artist }}</p>
                             <p class="card-text">Anno: {{ vinyl.year }}</p>
                             <p class="card-text">Prezzo: €{{ vinyl.price }}</p>
+                            
                             <button @click="editVinyl(vinyl)" class="btn modifica mx-2">Modifica</button>
                             <button @click="deleteVinyl(vinyl.id_vinyl)" class="btn elimina">Elimina</button>
                         </div>
