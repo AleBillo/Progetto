@@ -33,14 +33,12 @@ export default {
         password: this.password
       })
       .then(response => {
-        const nickname = response.data.nickname; // Ottieni il nickname dalla risposta
-        localStorage.setItem('nickname', nickname);
         if (response.data.success) {
-          if (response.data.role === 'admin') {
-            this.$router.push('/admin');
-          } else {
-            this.$router.push('/utente');
-          }
+          const nickname = response.data.nickname;
+          const role = response.data.role;
+          localStorage.setItem('nickname', nickname);
+          localStorage.setItem('role', role);
+          this.$router.push(role === 'admin' ? '/admin' : '/utente');
         } else {
           alert(response.data.message);
         }
@@ -50,5 +48,6 @@ export default {
         alert('Si è verificato un errore durante il login.');
       });
     }
+    
   }
 };

@@ -8,6 +8,12 @@ import Registra from './pagine/registra.js';
 import Admin from './pagine/admin.js';
 import Utente from './pagine/utente.js';
 
+const auth = {
+    isLoggedIn: () => !!localStorage.getItem('nickname'),
+    userRole: () => localStorage.getItem('role'), // "admin" o "user"
+};
+  
+
 
 
 // Definisci le tue route
@@ -29,6 +35,21 @@ const router = VueRouter.createRouter({
 });
 
 // Crea l'app Vue
-const app = Vue.createApp({});
-app.use(router);
-app.mount('#app');
+const app = Vue.createApp({
+    data() {
+      return {};
+    },
+    computed: {
+      isLoggedIn() {
+        return auth.isLoggedIn();
+      },
+      userRole() {
+        return auth.userRole();
+      }
+    }
+ });
+  
+  // Usa il router
+  app.use(router);
+  app.mount('#app');
+  

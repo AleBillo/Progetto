@@ -42,9 +42,12 @@ export default {
       </div>
 
       <div class="text-center my-3">
-        <router-link to="/login">
-          <button type="button" class="btn btn-lg w-100 btnbuy">Acquista</button>
-        </router-link>
+        <button 
+          type="button" 
+          class="btn btn-lg w-100 btnbuy"
+          @click="gestisciAcquisto">
+          Acquista
+        </button>
       </div>
     </div>
   `,
@@ -62,6 +65,15 @@ export default {
     rimuoviDalCarrello(item) {
       this.carrello = this.carrello.filter(prod => prod.id_vinyl !== item.id_vinyl);
       localStorage.setItem('carrello', JSON.stringify(this.carrello));
+    },
+    gestisciAcquisto() {
+      if (!this.nickname || this.nickname.trim() === '') {
+        // Se non sei autenticato, reindirizza a /login
+        this.$router.push('/login');
+      } else {
+        // Aggiungi logica per gestire l'acquisto se necessario
+        alert('Acquisto completato!');
+      }
     }
   },
   computed: {

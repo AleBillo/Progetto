@@ -36,10 +36,12 @@ export default {
 
       
       logout() {
-        this.nickname = ''; // Reset della variabile locale
-        localStorage.removeItem('nickname'); // Rimuove il valore memorizzato nel localStorage
-        alert('Logout effettuato con successo!'); // Messaggio di conferma (opzionale)
-    }
+        localStorage.removeItem('nickname');
+        localStorage.removeItem('role');
+        alert('Logout effettuato con successo!');
+        this.$router.push('/login'); // Torna alla pagina di login
+      }
+      
 
     }
   };
