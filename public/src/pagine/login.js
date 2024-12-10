@@ -1,41 +1,52 @@
 export default {
   template: `
-
     <div class="login-container container-fluid mt-5">
-    <form class="login-form">
-      <label for="email">EMAIL</label>
-      <input type="email" id="email" placeholder="Inserisci la tua email" required />
-      
-      <label for="password">PASSWORD</label>
-      <input class="input" type="password" id="password" placeholder="Inserisci la tua password" required />
-      
-      <button type="submit" class="btn-login">ACCEDI</button>
-      
-      <p class="separator">Oppure</p>
-      
-      <div class="text-center">
-        <router-link to="/registra">
-        <button type="button" class="btn btn-lg mt-3 btn-register">REGISTRATI</button>
-        </router-link>
-      </div>
-      
-    </form>
-  </div>
-   
+      <form class="login-form" @submit.prevent="loginUser">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" v-model="email" placeholder="Inserisci la tua email" required />
+        
+        <label for="password">PASSWORD</label>
+        <input class="input" type="password" id="password" v-model="password" placeholder="Inserisci la tua password" required />
+        
+        <button type="submit" class="btn-login">ACCEDI</button>
+        
+        <p class="separator">Oppure</p>
+        
+        <div class="text-center">
+          <router-link to="/registra">
+            <button type="button" class="btn btn-lg mt-3 btn-register">REGISTRATI</button>
+          </router-link>
+        </div>
+      </form>
+    </div>
   `,
-  
   data() {
     return {
-      
+      email: '',
+      password: ''
     };
   },
-
-
-  created() {
-    
-  },
-
-  
-
-  methods: {}
+  methods: {
+    loginUser() {
+      axios.post('http://localhost:3000/api/login', {
+        email: this.email,
+        password: this.password
+      })
+      .then(response => {
+        if (response.data.success) {
+          if (response.data.role === 'admin') {
+            this.$router.push('/admin');
+          } else {
+            this.$router.push('/utente');
+          }
+        } else {
+          alert(response.data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Errore durante il login:', error);
+        alert('Si è verificato un errore durante il login.');
+      });
+    }
+  }
 };

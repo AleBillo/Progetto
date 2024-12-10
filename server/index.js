@@ -4,10 +4,13 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const vinylsRoutes = require('./routes/vinylsRoutes');
 const categoriesRoutes = require('./routes/categoriesRoutes');
+const loginRoutes = require('./routes/loginRoutes');
 
 const app = express();
 const PORT = 3000;
+
 app.use('/images', express.static('images'));
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,7 +26,8 @@ app.get('/', (req, res) => {
 // Route per i vinili
 app.use('/api/vinyls', vinylsRoutes);
 app.use('/api/categories', categoriesRoutes);  // route delle categorie
- 
+app.use('/api', loginRoutes);  // la rotta di login
+
 // Avvio del server
 app.listen(PORT, () => {
     console.log(`Server in ascolto su http://localhost:${PORT}`);
