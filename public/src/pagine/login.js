@@ -33,6 +33,8 @@ export default {
         password: this.password
       })
       .then(response => {
+        const nickname = response.data.nickname; // Ottieni il nickname dalla risposta
+        localStorage.setItem('nickname', nickname);
         if (response.data.success) {
           if (response.data.role === 'admin') {
             this.$router.push('/admin');

@@ -6,6 +6,7 @@ import listino from './pagine/listino.js';
 import Carrello from './pagine/carrello.js';
 import Registra from './pagine/registra.js';
 import Admin from './pagine/admin.js';
+import Utente from './pagine/utente.js';
 
 // Definisci le tue route
 const routes = [
@@ -15,7 +16,8 @@ const routes = [
     { path: '/listino', component: listino },
     { path: '/carrello', component: Carrello },
     { path: '/registra', component: Registra},
-    { path: '/admin', component: Admin}
+    { path: '/admin', component: Admin},
+    { path: '/utente', component: Utente}
 ];
 
 // Crea il router

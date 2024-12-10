@@ -266,3 +266,14 @@ button {
 .offcanvas-body {
   font-size: 1.2rem; 
 }
+
+.utente-container {
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+}
+
+.nickname {
+  color: #007bff;
+  font-weight: bold;
+}

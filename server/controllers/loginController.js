@@ -27,7 +27,9 @@ exports.loginUser = (req, res) => {
         res.json({
             success: true,
             message: 'Login effettuato con successo',
-            role: user.amministratore ? 'admin' : 'utente'  // Restituisci il ruolo dell'utente
+            role: user.amministratore ? 'admin' : 'utente',
+              // Restituisci il ruolo dell'utente
+              nickname: user.nickname 
         });
     });
 };
