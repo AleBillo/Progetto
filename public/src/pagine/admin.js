@@ -6,13 +6,11 @@ export default {
         <div class="text-center">
             <router-link to="/login">
                 <button type="button" class="btn btn-lg btnlogout">Logout</button>
-                    
-               
             </router-link>
 
              <div class="text-center mx-2">
                     <button @click="showAddForm = true" class="btn btn-success btn-lg">Aggiungi Vinile</button>
-                </div>
+             </div>
         </div>
 
         <!-- Modulo di modifica vinile -->

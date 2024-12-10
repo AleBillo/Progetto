@@ -39,6 +39,14 @@ export default {
         </div>
       </div>
     </div>
+
+      <div class="text-center">
+              <router-link to="/login">
+              <button type="button" class="btn btn-lg btnbuy">Acquista</button>
+              </router-link>
+
+      </div>
+
    
    </div>
     

@@ -225,3 +225,44 @@ button {
   margin-top: 10px;
 }
 
+.btnbuy{
+
+  background-color: #218838;
+  color: white;
+
+
+}
+
+.btnbuy:hover{
+
+  background-color: #31c451;
+  color: white;
+
+}
+
+.btnx{
+  color: white;
+  background-color: #ffffff;
+}
+
+
+.nav-link {
+  font-weight: 700; 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+}
+
+
+.nav-item {
+  margin-bottom: 20px; 
+}
+
+
+.offcanvas-body .nav-item {
+  padding: 10px 0; 
+}
+
+
+.offcanvas-body {
+  font-size: 1.2rem; 
+}

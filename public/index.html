@@ -27,28 +27,41 @@
                     <img src="./media/logo2.png" alt="NavbarLogo" style="width: 90px;">
                 </a>
         
-                <!-- Bottone del menu ad hamburger -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <!-- Elementi della navbar -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <li class="nav-item">
-                            <router-link class="nav-link text-light font-monospace" to="/faq">FAQ</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link text-light font-monospace" to="/login">LOGIN</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link text-light font-monospace" to="/listino">LISTINO</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link class="nav-link text-light font-monospace" to="/carrello">CARRELLO</router-link>
-                        </li>
-                    </ul>
-                </div>
+                        <!-- Bottone del menu ad hamburger -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Elementi della navbar -->
+                        <div class="offcanvas offcanvas-end navbg1" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title text-light" id="navbarNavLabel">Dove andiamo?</h5>
+                                <button type="button" class="btn-close btnx text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav ms-auto text-center">
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-light font-monospace" to="/faq">FAQ</router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-light font-monospace" to="/login">LOGIN</router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-light font-monospace" to="/listino">LISTINO</router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link class="nav-link text-light font-monospace" to="/carrello">CARRELLO</router-link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <router-link to="/" class="navbar-brand">
+                                            <img src="./media/logo2.png" alt="NavbarLogo" style="width: 150px;">
+                                        </router-link>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
             </div>
         </nav>
         
