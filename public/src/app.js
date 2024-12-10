@@ -8,6 +8,8 @@ import Registra from './pagine/registra.js';
 import Admin from './pagine/admin.js';
 import Utente from './pagine/utente.js';
 
+
+
 // Definisci le tue route
 const routes = [
     { path: '/', component: Home },

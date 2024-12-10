@@ -1,16 +1,17 @@
 export default {
     template: `
    <div class=" container container-fluid containeradmin">
-        <h1 class="text-center text-light">Salve Admin</h1>
+        <h1 class="text-center text-light">Salve, admin <span class="nickname">{{ nickname }}</span></h1>
         <h4 class="text-center text-light">Apportare delle modifiche?</h4>
         <div class="text-center">
+              <div class="text-center mx-2">
+                    <button @click="showAddForm = true" class="btn bbtn-lg btnbuy">Aggiungi Vinile</button>
+             </div>
+
             <router-link to="/login">
-                <button type="button" class="btn btn-lg btnlogout">Logout</button>
+                <button type="button" class="btn btn-lg btnlogout" @click="logout">Logout</button>
             </router-link>
 
-             <div class="text-center mx-2">
-                    <button @click="showAddForm = true" class="btn btn-success btn-lg">Aggiungi Vinile</button>
-             </div>
         </div>
 
         <!-- Modulo di modifica vinile -->
@@ -146,7 +147,8 @@ export default {
                 category_id: null,
                 image_url: ''
             },
-            categories: [] // Contiene le categorie dei vinili
+            categories: [], // Contiene le categorie dei vinili
+            nickname: '' // Valore iniziale vuoto
         };
     },
     created() {
@@ -167,8 +169,12 @@ export default {
             .catch(error => {
                 console.error('Errore nel recupero delle categorie:', error);
             });
+
+            this.nickname = localStorage.getItem('nickname') || 'Utente';
     },
     methods: {
+
+        
         // Mostra il modulo di modifica con i dati del vinile selezionato
         editVinyl(vinyl) {
             this.editVinylData = { ...vinyl };
@@ -267,7 +273,17 @@ export default {
                 category_id: null,
                 image_url: ''
             };
-        }
+        },
+
+        
+
+            logout() {
+                this.nickname = ''; // Reset della variabile locale
+                localStorage.removeItem('nickname'); // Rimuove il valore memorizzato nel localStorage
+                alert('Logout effettuato con successo!'); // Messaggio di conferma (opzionale)
+            }
+            
+        
     }
     };
     

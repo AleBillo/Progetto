@@ -186,6 +186,7 @@ footer {
 .btnlogout{
 
   color: #F9F8F8;
+  background-color: #F71735;
 
 }
 .btnlogout:hover{
@@ -228,7 +229,7 @@ button {
 .btnbuy{
 
   background-color: #218838;
-  color: white;
+  color: #F9F8F8;
 
 
 }
@@ -236,13 +237,13 @@ button {
 .btnbuy:hover{
 
   background-color: #31c451;
-  color: white;
+  color: #F9F8F8;
 
 }
 
 .btnx{
-  color: white;
-  background-color: #ffffff;
+  color: #F9F8F8;
+  background-color: #F9F8F8;
 }
 
 
@@ -268,8 +269,8 @@ button {
 }
 
 .utente-container {
-  background-color: #f8f9fa;
-  color: #333;
+  background-color: #141414;
+  color: #F9F8F8;
   text-align: center;
 }
 
