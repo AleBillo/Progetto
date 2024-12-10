@@ -63,11 +63,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `email`, `nickname`, `password`, `name`, `surname`, `amministratore`) VALUES
-(1, 'mario.rossi@example.com', 'mario123', 'password1', 'Mario', 'Rossi', 1),
-(2, 'giulia.bianchi@example.com', 'giulia456', 'password2', 'Giulia', 'Bianchi', 0),
-(3, 'alejandro.smith@example.com', 'alejandro789', 'password3', 'Alejandro', 'Smith', 0),
-(4, 'lucia.kowalski@example.com', 'lucia101', 'password4', 'Lucia', 'Kowalski', 0),
-(5, 'julia.martin@example.com', 'julia202', 'password5', 'Julia', 'Martin', 1);
+(1, 'admin@example.com', 'Paso22', 'admin', 'Luca', 'Pasini', 1),
+(2, 'utente@example.com', 'Itsas', 'utente', 'Matteo', 'Goga', 0),
+(3, 'tommaso.sardelli@example.com', 'Tommyplayer9', 'utente', 'Tommaso', 'Sardelli', 0),
+(4, 'lucia.kowalski@example.com', 'lucia101', 'utente', 'Lucia', 'Kowalski', 0),
+(5, 'lorenza.parrod@example.com', 'Hyuna', 'admin', 'Lorenza', 'Parrod', 1);
 
 -- --------------------------------------------------------
 
