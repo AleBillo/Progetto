@@ -4,10 +4,10 @@ Sito fatto per l'esame di "Ingegneria dei Sistemi Web" del 2° anno accademico d
 https://www.figma.com/proto/2SSDguBa7N21bqAmhD7Glq/Progetto?node-id=5-15&t=8dQYBeHXZ8f0h6CT-1
 
 # Progettazione:
-1. Introduzione al progetto
+Introduzione al progetto
 Creazione di un sito web ecommerce per la visualizzazione e la vendita di vinili musicali. Con funzione di accesso e modifica del carrello. differenza tra Utente ed Admin, e possibilità di modificare il listino dei vinili.
 
-### 3. **Tecnologie utilizzate**
+### **Tecnologie utilizzate**
 Il progetto ha utilizzato una combinazione di tecnologie per realizzare sia il front-end che il back-end:
 - **Front-end**:
   - **HTML**: struttura base delle pagine.
