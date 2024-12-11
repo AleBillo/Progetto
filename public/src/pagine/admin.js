@@ -124,51 +124,53 @@ export default {
   </div>
   
   <!-- Lista dei vinili -->
-  <div class="container my-4">
-    <h3 class="text-center text-light">Ecco il listino attuale</h3>
-    <div v-if="vinyls.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
-      <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col">
-        <div class="card h-100 shadow-lg">
-          <img 
-            :src="'/media/' + vinyl.image_url" 
-            class="card-img-top img-fluid" 
-            alt="Immagine Vinile" 
-            style="object-fit: cover; height: 200px;"
-          >
-          <div class="card-body">
-            <h5 class="card-title text-primary">{{ vinyl.vinyl_name }}</h5>
-            <p class="card-text">
-              <strong>Artista:</strong> {{ vinyl.artist }}
-            </p>
-            <p class="card-text">
-              <strong>Anno:</strong> {{ vinyl.year }}
-            </p>
-            <p class="card-text">
-              <strong>Prezzo:</strong> €{{ vinyl.price }}
-            </p>
-            <p class="card-text">
-              <strong>Genere:</strong> {{ vinyl.category_name }}
-            </p>
-          </div>
-          <div class="card-footer bg-light d-flex justify-content-between">
-            <button 
-              @click="editVinyl(vinyl)" 
-              class="btn btn-sm btn-warning">
-              Modifica
-            </button>
-            <button 
-              @click="deleteVinyl(vinyl.id_vinyl)" 
-              class="btn btn-sm btn-danger">
-              Elimina
-            </button>
-          </div>
+<div class="container my-4">
+  <h3 class="text-center text-light">Ecco il listino attuale</h3>
+  <div v-if="vinyls.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+    <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col">
+      <div class="card h-100 shadow-lg">
+        <img 
+          :src="'/media/' + vinyl.image_url" 
+          class="card-img-top img-fluid" 
+          alt="Immagine Vinile" 
+          style="object-fit: cover; height: 200px;"
+        >
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ vinyl.vinyl_name }}</h5>
+          <p class="card-text">
+            <strong>Artista:</strong> {{ vinyl.artist }}
+          </p>
+          <p class="card-text">
+            <strong>Anno:</strong> {{ vinyl.year }}
+          </p>
+          <p class="card-text">
+            <strong>Prezzo:</strong> €{{ vinyl.price }}
+          </p>
+          <p class="card-text">
+            <strong>Genere:</strong> 
+            {{ getCategoryName(vinyl.category_id) }}
+          </p>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-between">
+          <button 
+            @click="editVinyl(vinyl)" 
+            class="btn btn-sm btn-warning">
+            Modifica
+          </button>
+          <button 
+            @click="deleteVinyl(vinyl.id_vinyl)" 
+            class="btn btn-sm btn-danger">
+            Elimina
+          </button>
         </div>
       </div>
     </div>
-    <div v-else class="text-center">
-      <p class="text-light">Nessun vinile trovato!</p>
-    </div>
   </div>
+  <div v-else class="text-center">
+    <p class="text-light">Nessun vinile trovato!</p>
+  </div>
+</div>
+
 </div>
 
     `,
@@ -221,6 +223,11 @@ export default {
             this.nickname = localStorage.getItem('nickname') || 'Utente';
     },
     methods: {
+
+        getCategoryName(categoryId) {
+            const category = this.categories.find(cat => cat.id_category === categoryId);
+            return category ? category.category_name : 'Sconosciuto';
+        },
 
         
         // Mostra il modulo di modifica con i dati del vinile selezionato
