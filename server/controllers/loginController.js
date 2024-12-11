@@ -18,7 +18,7 @@ exports.loginUser = (req, res) => {
 
         const user = results[0];  // Ottieni il primo risultato (dato che l'email è unica)
 
-        // Confronta la password in chiaro con quella nel database (Nota: NON è sicuro in produzione)
+        // Confronta la password in chiaro con quella nel database 
         if (password !== user.password) {
             return res.status(401).json({ success: false, message: 'Email o password errati' });
         }

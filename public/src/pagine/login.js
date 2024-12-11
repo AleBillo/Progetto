@@ -45,7 +45,7 @@ export default {
       })
       .catch(error => {
         console.error('Errore durante il login:', error);
-        alert('Si è verificato un errore durante il login.');
+        alert('Email o Password errata');
       });
     }
     

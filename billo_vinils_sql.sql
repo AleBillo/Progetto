@@ -49,13 +49,14 @@ INSERT INTO `categories` (`id_category`, `category_name`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+  `id_user` INT(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `nickname` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `surname` varchar(100) DEFAULT NULL,
-  `amministratore` tinyint(1) DEFAULT 0
+  `amministratore` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -105,3 +106,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
