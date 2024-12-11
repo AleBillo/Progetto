@@ -3,8 +3,7 @@ Sito fatto per l'esame di "Ingegneria dei Sistemi Web" del 2° anno accademico d
 # Mockup del progetto:
 https://www.figma.com/proto/2SSDguBa7N21bqAmhD7Glq/Progetto?node-id=5-15&t=8dQYBeHXZ8f0h6CT-1
 
-# Progettazione:
-Introduzione al progetto
+# Introduzione al progetto:
 Creazione di un sito web ecommerce per la visualizzazione e la vendita di vinili musicali. Con funzione di accesso e modifica del carrello. differenza tra Utente ed Admin, e possibilità di modificare il listino dei vinili.
 
 ### **Tecnologie utilizzate**
