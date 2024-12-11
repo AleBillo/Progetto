@@ -98,9 +98,7 @@ INSERT INTO `vinyls` (`id_vinyl`, `vinyl_name`, `artist`, `price`, `year`, `cate
 (6, 'Ready to Die', 'The Notorious B.I.G.', 29.50, 1994, 2, 'Ready_to_die.jpg'),
 (7, 'Abbey Road', 'The Beatles', 29.99, 1969, 1, 'Abbey_road.jpg'),
 (8, 'The College Dropout', 'Kanye West', 27.50, 2004, 3, 'The_college_dropout.jpg'),
-(9, 'Illmatic', 'Nas', 24.99, 1994, 2, 'Illmatic.jpg'),
-(10, 'Take Five', 'Dave Brubeck', 22.00, 1959, 4, 'Take_five.jpg'),
-(11, 'DAMN.', 'Kendrick Lamar', 26.99, 2017, 2, 'DAMN.jpg');
+(9, 'Illmatic', 'Nas', 24.99, 1994, 2, 'Illmatic.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

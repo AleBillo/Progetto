@@ -280,8 +280,10 @@ export default {
         logout() {
             localStorage.removeItem('nickname');
             localStorage.removeItem('role');
+            localStorage.removeItem('carrello'); // Svuota il carrello
             alert('Logout effettuato con successo!');
             this.$router.push('/login'); // Torna alla pagina di login
+            
           }
           
             
