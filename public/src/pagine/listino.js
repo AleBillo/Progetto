@@ -27,6 +27,7 @@ export default {
           <p>Nessun vinile trovato!</p>
       </div>
   </div>
+  
   `,
   data() {
       return {
