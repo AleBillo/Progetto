@@ -49,17 +49,32 @@ export default {
           Acquista
         </button>
       </div>
+
+      <!-- Toast for purchase confirmation -->
+      <div ref="toast" class="toast align-items-center text-bg-success position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            Acquisto completato con successo!
+          </div>
+          <button type="button" class="btn-close btn-close-white" @click="chiudiToast" aria-label="Close"></button>
+        </div>
+      </div>
     </div>
   `,
   data() {
     return {
       carrello: [],
-      nickname: '' // Valore iniziale vuoto
+      nickname: '', // Valore iniziale vuoto
+      toastInstance: null, // Variabile per la gestione del toast
     };
   },
   created() {
     this.carrello = JSON.parse(localStorage.getItem('carrello')) || [];
     this.nickname = localStorage.getItem('nickname') || '';
+  },
+  mounted() {
+    // Inizializzare il toast all'avvio del componente
+    this.toastInstance = new bootstrap.Toast(this.$refs.toast);
   },
   methods: {
     rimuoviDalCarrello(item) {
@@ -71,9 +86,17 @@ export default {
         // Se non sei autenticato, reindirizza a /login
         this.$router.push('/login');
       } else {
-        // Aggiungi logica per gestire l'acquisto se necessario
-        alert('Acquisto completato!');
+        // Mostra il toast per l'acquisto completato
+        this.toastInstance.show(); // Mostra il toast
+
+        // Nascondi il toast dopo 3 secondi
+        setTimeout(() => {
+          this.toastInstance.hide();
+        }, 3000);
       }
+    },
+    chiudiToast() {
+      this.toastInstance.hide(); // Permette di chiudere manualmente il toast
     }
   },
   computed: {
