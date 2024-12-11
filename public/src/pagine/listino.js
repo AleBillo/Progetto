@@ -2,31 +2,48 @@ export default {
     
   template: `
    
-  <div class="container my-4">
-      <h1 class="text-center text-light">Il nostro listino dei vinili</h1>
-      <div v-if="vinyls.length > 0" class="row">
-          <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col-md-4 my-3">
-              <div class="card">
-              <img :src="' /media/' + vinyl.image_url" class="card-img-top" alt="Immagine Vinile"> 
-                  <div class="card-body">
-                      <h5 class="card-title">{{ vinyl.vinyl_name }}</h5>
-                      <p class="card-text">Artista: {{ vinyl.artist }}</p>
-                      <p class="card-text">Anno: {{ vinyl.year }}</p>
-                      <p class="card-text">Prezzo: €{{ vinyl.price }}</p>
-                       <button 
-                           class = "btn btn-sm"
-                          :class ="{'btn-success': isInCart(vinyl), 'btn-primary': !isInCart(vinyl)}"
-                          @click="addToCart(vinyl)">
-                          {{ isInCart(vinyl) ?'Aggiunto' : 'Aggiungi al Carrello'}}
-                       </button>
-                  </div>
-              </div>
-          </div>
+ <div class="container my-4">
+  <h1 class="text-center text-light">Il nostro listino dei vinili</h1>
+  
+  <div v-if="vinyls.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+    <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col">
+      <div class="card h-100 shadow-lg">
+        <img 
+          :src="'/media/' + vinyl.image_url" 
+          class="card-img-top img-fluid" 
+          alt="Immagine Vinile" 
+          style="object-fit: cover; height: 200px;"
+        >
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ vinyl.vinyl_name }}</h5>
+          <p class="card-text">
+            <strong>Artista:</strong> {{ vinyl.artist }}
+          </p>
+          <p class="card-text">
+            <strong>Anno:</strong> {{ vinyl.year }}
+          </p>
+          <p class="card-text">
+            <strong>Prezzo:</strong> €{{ vinyl.price }}
+          </p>
+        </div>
+        <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+          <button 
+            class="btn btn-sm px-4"
+            :class="{ 'btn-success': isInCart(vinyl), 'btn-primary': !isInCart(vinyl) }"
+            @click="addToCart(vinyl)"
+          >
+            {{ isInCart(vinyl) ? 'Aggiunto' : 'Aggiungi al Carrello' }}
+          </button>
+        </div>
       </div>
-      <div v-else class="text-center">
-          <p>Nessun vinile trovato!</p>
-      </div>
+    </div>
   </div>
+  
+  <div v-else class="text-center">
+    <p class="text-light">Nessun vinile trovato!</p>
+  </div>
+</div>
+
   
   `,
   data() {

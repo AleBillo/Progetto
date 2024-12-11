@@ -1,128 +1,176 @@
 export default {
     template: `
-   <div class=" container container-fluid containeradmin">
-        <h1 class="text-center text-light">Salve, admin <span class="nickname">{{ nickname }}</span></h1>
-        <h4 class="text-center text-light">Apportare delle modifiche?</h4>
-        <div class="text-center">
-              <div class="text-center mx-2">
-                    <button @click="showAddForm = true" class="btn bbtn-lg btnbuy">Aggiungi Vinile</button>
-             </div>
-
-            <router-link to="/login">
-                <button type="button" class="btn btn-lg btnlogout" @click="logout">Logout</button>
-            </router-link>
-
+  <div class="container container-fluid containeradmin my-4">
+  <h1 class="text-center text-light">
+    Salve, admin <span class="nickname">{{ nickname }}</span>
+  </h1>
+  <h4 class="text-center text-light">Apportare delle modifiche?</h4>
+  
+  <div class="text-center my-4">
+    <button 
+      @click="showAddForm = true" 
+      class="btn btn-lg btnbuy mx-2">
+      Aggiungi Vinile
+    </button>
+    <router-link to="/login">
+      <button 
+        type="button" 
+        class="btn btn-lg btnlogout mx-2" 
+        @click="logout">
+        Logout
+      </button>
+    </router-link>
+  </div>
+  
+  <!-- Modulo di modifica vinile -->
+  <div v-if="showEditForm" class="modal-overlay d-flex align-items-center justify-content-center">
+    <div class="modal-container bg-light p-4 rounded shadow-lg">
+      <h3 class="mb-3">Modifica Vinile</h3>
+      <form @submit.prevent="updateVinyl">
+        <div class="form-group mb-3">
+          <label for="vinyl_name" class="form-label">Nome Vinile</label>
+          <input type="text" id="vinyl_name" v-model="editVinylData.vinyl_name" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="artist" class="form-label">Artista</label>
+          <input type="text" id="artist" v-model="editVinylData.artist" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+        <label for="price" class="form-label">Prezzo (€)</label>
+             <input 
+            type="number" 
+            id="price" 
+            v-model="editVinylData.price" 
+            class="form-control" 
+            step="0.01" 
+            required />
         </div>
 
-        <!-- Modulo di modifica vinile -->
-        <div v-if="showEditForm" class="modal-overlay text-light">
-            <div class="modal-container">
-                <h3>Modifica Vinile</h3>
-                <form @submit.prevent="updateVinyl">
-                    <div class="form-group">
-                        <label for="vinyl_name">Nome Vinile</label>
-                        <input type="text" id="vinyl_name" v-model="editVinylData.vinyl_name" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="artist">Artista</label>
-                        <input type="text" id="artist" v-model="editVinylData.artist" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Prezzo (€)</label>
-                        <input type="number" id="price" v-model="editVinylData.price" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Anno</label>
-                        <input type="number" id="year" v-model="editVinylData.year" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Categoria</label>
-                        <select v-model="editVinylData.category_id" class="form-control">
-                            <option v-for="category in categories" :key="category.id_category" :value="category.id_category">
-                                {{ category.category_name }}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="image_url">URL Immagine</label>
-                        <input type="text" id="image_url" v-model="editVinylData.image_url" class="form-control" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Salva Modifiche</button>
-                    <button type="button" class="btn btn-secondary" @click="closeEditForm">Annulla</button>
-                </form>
-            </div>
+        <div class="form-group mb-3">
+          <label for="year" class="form-label">Anno</label>
+          <input type="number" id="year" v-model="editVinylData.year" class="form-control" required />
         </div>
-
-        <!-- Modulo di aggiunta vinile -->
-        <div v-if="showAddForm" class="modal-overlay text-light">
-            <div class="modal-container">
-                <h3>Aggiungi Nuovo Vinile</h3>
-                <form @submit.prevent="addVinyl">
-                    <div class="form-group">
-                        <label for="id_vinyl">ID Vinile</label>
-                        <input type="number" id="id_vinyl" v-model="newVinyl.id_vinyl" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="vinyl_name">Nome Vinile</label>
-                        <input type="text" id="vinyl_name" v-model="newVinyl.vinyl_name" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="artist">Artista</label>
-                        <input type="text" id="artist" v-model="newVinyl.artist" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="price">Prezzo (€)</label>
-                        <input type="number" id="price" v-model="newVinyl.price" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Anno</label>
-                        <input type="number" id="year" v-model="newVinyl.year" class="form-control" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Categoria</label>
-                        <select v-model="newVinyl.category_id" class="form-control">
-                            <option v-for="category in categories" :key="category.id_category" :value="category.id_category">
-                                {{ category.category_name }}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="image_url">URL Immagine</label>
-                        <input type="text" id="image_url" v-model="newVinyl.image_url" class="form-control" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Aggiungi Vinile</button>
-                    <button type="button" class="btn btn-secondary" @click="closeAddForm">Annulla</button>
-                </form>
-                <p v-if="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
-            </div>
+        <div class="form-group mb-3">
+          <label for="category" class="form-label">Categoria</label>
+          <select v-model="editVinylData.category_id" class="form-control">
+            <option v-for="category in categories" :key="category.id_category" :value="category.id_category">
+              {{ category.category_name }}
+            </option>
+          </select>
         </div>
-
-        <!-- Lista dei vinili -->
-        <div class="container my-4">
-            <h3 class="text-center text-light">Ecco il listino attuale</h3>
-            <div v-if="vinyls.length > 0" class="row">
-                <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col-md-4 my-3">
-                    <div class="card">
-                        <img :src="'/media/' + vinyl.image_url" class="card-img-top" alt="Immagine Vinile"> 
-                        <div class="card-body">
-                            <h5 class="card-title">{{ vinyl.vinyl_name }}</h5>
-                            <p class="card-text">Artista: {{ vinyl.artist }}</p>
-                            <p class="card-text">Anno: {{ vinyl.year }}</p>
-                            <p class="card-text">Prezzo: €{{ vinyl.price }}</p>
-                            <p class="card-text">Genere: {{ vinyl.category_name }}</p>
-                            <button @click="editVinyl(vinyl)" class="btn modifica mx-2">Modifica</button>
-                            <button @click="deleteVinyl(vinyl.id_vinyl)" class="btn elimina">Elimina</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div v-else class="text-center">
-                <p>Nessun vinile trovato!</p>
-            </div>
-
-           
+        <div class="form-group mb-3">
+          <label for="image_url" class="form-label">URL Immagine</label>
+          <input type="text" id="image_url" v-model="editVinylData.image_url" class="form-control" />
         </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+          <button type="button" class="btn btn-secondary" @click="closeEditForm">Annulla</button>
+        </div>
+      </form>
     </div>
+  </div>
+  
+  <!-- Modulo di aggiunta vinile -->
+  <div v-if="showAddForm" class="modal-overlay d-flex align-items-center justify-content-center">
+    <div class="modal-container bg-light p-4 rounded shadow-lg">
+      <h3 class="mb-3">Aggiungi Nuovo Vinile</h3>
+      <form @submit.prevent="addVinyl">
+        <div class="form-group mb-3">
+          <label for="id_vinyl" class="form-label">ID Vinile</label>
+          <input type="number" id="id_vinyl" v-model="newVinyl.id_vinyl" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="vinyl_name" class="form-label">Nome Vinile</label>
+          <input type="text" id="vinyl_name" v-model="newVinyl.vinyl_name" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="artist" class="form-label">Artista</label>
+          <input type="text" id="artist" v-model="newVinyl.artist" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+        <label for="price" class="form-label">Prezzo (€)</label>
+        <input 
+            type="number" 
+            id="price" 
+            v-model="newVinyl.price" 
+            class="form-control" 
+            step="0.01" 
+            required />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="year" class="form-label">Anno</label>
+          <input type="number" id="year" v-model="newVinyl.year" class="form-control" required />
+        </div>
+        <div class="form-group mb-3">
+          <label for="category" class="form-label">Categoria</label>
+          <select v-model="newVinyl.category_id" class="form-control">
+            <option v-for="category in categories" :key="category.id_category" :value="category.id_category">
+              {{ category.category_name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label for="image_url" class="form-label">URL Immagine</label>
+          <input type="text" id="image_url" v-model="newVinyl.image_url" class="form-control" />
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Aggiungi Vinile</button>
+          <button type="button" class="btn btn-secondary" @click="closeAddForm">Annulla</button>
+        </div>
+      </form>
+      <p v-if="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+    </div>
+  </div>
+  
+  <!-- Lista dei vinili -->
+  <div class="container my-4">
+    <h3 class="text-center text-light">Ecco il listino attuale</h3>
+    <div v-if="vinyls.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+      <div v-for="vinyl in vinyls" :key="vinyl.id_vinyl" class="col">
+        <div class="card h-100 shadow-lg">
+          <img 
+            :src="'/media/' + vinyl.image_url" 
+            class="card-img-top img-fluid" 
+            alt="Immagine Vinile" 
+            style="object-fit: cover; height: 200px;"
+          >
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ vinyl.vinyl_name }}</h5>
+            <p class="card-text">
+              <strong>Artista:</strong> {{ vinyl.artist }}
+            </p>
+            <p class="card-text">
+              <strong>Anno:</strong> {{ vinyl.year }}
+            </p>
+            <p class="card-text">
+              <strong>Prezzo:</strong> €{{ vinyl.price }}
+            </p>
+            <p class="card-text">
+              <strong>Genere:</strong> {{ vinyl.category_name }}
+            </p>
+          </div>
+          <div class="card-footer bg-light d-flex justify-content-between">
+            <button 
+              @click="editVinyl(vinyl)" 
+              class="btn btn-sm btn-warning">
+              Modifica
+            </button>
+            <button 
+              @click="deleteVinyl(vinyl.id_vinyl)" 
+              class="btn btn-sm btn-danger">
+              Elimina
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-else class="text-center">
+      <p class="text-light">Nessun vinile trovato!</p>
+    </div>
+  </div>
+</div>
+
     `,
     data() {
         return {
