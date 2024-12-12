@@ -1,35 +1,43 @@
-const db = require('../db');  // Importa la connessione al database
+const db = require('../db');  // Connessione al database
 
-// Funzione che gestisce la logica del login
+const bcrypt = require('bcrypt');
+
 exports.loginUser = (req, res) => {
-    const { email, password } = req.body;  // Estrai email e password dalla richiesta
+    const { email, password } = req.body;
 
-    // Query per cercare l'utente in base all'email
+    // Controlla se l'email esiste nel database
     db.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
         if (err) {
             console.error('Errore nella query:', err);
-            return res.status(500).json({ success: false, message: 'Errore nel server' });
+            return res.status(500).json({ success: false, message: 'Errore del server' });
         }
-
         if (results.length === 0) {
-            // Se non esiste l'utente con quella email, restituisci errore
+            // Nessun utente trovato con questa email
             return res.status(401).json({ success: false, message: 'Email o password errati' });
         }
 
-        const user = results[0];  // Ottieni il primo risultato (dato che l'email è unica)
+        const user = results[0];
 
-        // Confronta la password in chiaro con quella nel database 
-        if (password !== user.password) {
-            return res.status(401).json({ success: false, message: 'Email o password errati' });
-        }
+        const correctPassword = bcrypt.compare(password, user.password)
+      
 
-        // Se il login è corretto, restituisci un messaggio di successo
+        if(correctPassword){
+        // Login riuscito
         res.json({
             success: true,
             message: 'Login effettuato con successo',
             role: user.amministratore ? 'admin' : 'utente',
-              // Restituisci il ruolo dell'utente
-              nickname: user.nickname 
-        });
+            nickname: user.nickname
+        })}
+         else{
+            res.json({
+                success: false,
+                message: 'Login non effettuato con successo',
+                role: user.amministratore ? 'admin' : 'utente',
+                nickname: user.nickname
+            });
+        }
+
     });
+ 
 };
