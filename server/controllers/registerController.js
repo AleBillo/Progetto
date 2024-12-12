@@ -1,5 +1,8 @@
 const db = require('../db');  // Connessione al database
 const bcrypt = require('bcrypt');  // Importa la libreria bcrypt
+const jwt = require('jsonwebtoken');  // Importa la libreria jsonwebtoken
+
+const JWT_SECRET = 'foo';  
 
 // Funzione per registrare un nuovo utente
 exports.registerUser = (req, res) => {
@@ -39,8 +42,28 @@ exports.registerUser = (req, res) => {
                         return res.status(500).json({ success: false, message: 'Errore nel server durante la registrazione' });
                     }
 
-                    // Se la registrazione è andata a buon fine
-                    res.status(201).json({ success: true, message: 'Registrazione completata con successo!' });
+                    // Crea il token JWT
+                    const accesstoken = jwt.sign(
+                        { email, nickname },  // Payload del token
+                        JWT_SECRET,            // Chiave segreta
+                        { expiresIn: '1 day' } // Scadenza del token
+                    );
+
+                    // Imposta il token come cookie
+                    res.cookie('authToken', accesstoken, {
+                        httpOnly: true,  // Solo HTTP, non accessibile da JavaScript
+                        secure: true,    // Imposta come secure se in produzione
+                        maxAge: 86400000 // Durata del cookie in millisecondi (1 giorno)
+                    });
+
+                    // Risposta di successo con il token e il payload
+                    res.status(201).json({ 
+                        success: true, 
+                        message: 'Registrazione completata con successo!',
+                        nickname,
+                        token,  // Restituisci il token JWT
+                        payload: { email, nickname } // Restituisci il payload
+                    });
                 }
             );
         });
