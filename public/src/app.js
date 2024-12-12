@@ -10,19 +10,8 @@ import Utente from './pagine/utente.js';
 
 // Aggiungi la logica per controllare lo stato del login usando i cookie
 const auth = {
-    isLoggedIn: () => {
-        // Controlla se il cookie 'authToken' è presente
-        return !!document.cookie.split(';').find(cookie => cookie.trim().startsWith('authToken='));
-    },
-    getUserRole: () => {
-        // Estrai il ruolo dell'utente (se presente nel cookie o in altro modo)
-        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('authToken='));
-        if (token) {
-            const payload = JSON.parse(atob(token.split('=')[1].split('.')[1]));
-            return payload.role;  // Restituisci il ruolo (assumendo che il JWT contenga il ruolo)
-        }
-        return null;
-    }
+    isLoggedIn: () => !!localStorage.getItem('nickname'),
+    userRole: () => localStorage.getItem('role'), // "admin" o "user"
 };
 
 // Definisci le tue route
@@ -46,19 +35,19 @@ const router = VueRouter.createRouter({
 // Crea l'app Vue
 const app = Vue.createApp({
     data() {
-        return {};
+      return {};
     },
     computed: {
-        isLoggedIn() {
-            return auth.isLoggedIn();
-        },
-        userRole() {
-            return auth.getUserRole();
-        }
+      isLoggedIn() {
+        return auth.isLoggedIn();
+      },
+      userRole() {
+        return auth.userRole();
+      }
     }
-});
-
-// Usa il router
-app.use(router);
-app.mount('#app');
+ });
+  
+  // Usa il router
+  app.use(router);
+  app.mount('#app');
   

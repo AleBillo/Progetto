@@ -38,6 +38,7 @@ export default {
           const role = response.data.role;
           localStorage.setItem('nickname', nickname);
           localStorage.setItem('role', role);
+         
           this.$router.push(role === 'admin' ? '/admin' : '/utente');
         } else {
           alert(response.data.message);
