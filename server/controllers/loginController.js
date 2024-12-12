@@ -28,10 +28,15 @@ exports.loginUser = (req, res) => {
             if (correctPassword) {
                 // Crea un token JWT
                 const token = jwt.sign(
-                    { email: user.email, nickname: user.nickname }, // Payload del token
-                    JWT_SECRET,                                      // Chiave segreta
-                    { expiresIn: '1 day' }                           // Scadenza del token
+                    { 
+                        email: user.email, 
+                        nickname: user.nickname,
+                        role: user.amministratore ? 'admin' : 'utente' 
+                    },
+                    JWT_SECRET,
+                    { expiresIn: '1 day' }
                 );
+                
 
                 // Imposta un cookie con il token
                 res.cookie('authToken', token, {
