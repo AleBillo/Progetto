@@ -60,6 +60,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dump dei dati per la tabella `users`
+--
+
+INSERT INTO `users` (`id_user`, `email`, `nickname`, `password`, `name`, `surname`, `amministratore`) VALUES
+(1, 'admin@example.com', 'Paso', '$2b$10$zJ30l19/6BgIQHn4YBQWZeUEBHxb8G80mrR/vLH8xfk.p39Y9jE9m', 'Luca', 'Pasini', 1),
+(2, 'utente@example.com', 'Itsas', '$2b$10$Fwlr4CyrfZZlSnJsaFCate0CD3hQ5Xu2PJLUR8eTxsiDVo8FHl7DG', 'Matteo', 'Goga', 0),
+(3, 'lorenza.parrod@example.com', 'Hyuna', '$2b$10$ULx0slrzZgjgUOhOnm0OxeVL8rOh.mJoh2h0J1MZTZhfZWN5kY6XS', 'Lorenza', 'Parrod', 0);
 
 -- --------------------------------------------------------
 
