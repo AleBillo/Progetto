@@ -1,6 +1,6 @@
 const db = require('../db');
 
-// Ottieni tutti i vinili
+
 const getAllVinyls = (req, res) => {
     const query = 'SELECT * FROM vinyls';
     db.query(query, (err, results) => {
@@ -14,7 +14,7 @@ const getAllVinyls = (req, res) => {
 };
 
 
-// Ottieni un singolo vinile per ID
+
 const getVinylById = (req, res) => {
     const { id } = req.params;
     const query = 'SELECT * FROM vinyls WHERE id_vinyl = ?';
@@ -30,7 +30,7 @@ const getVinylById = (req, res) => {
     });
 };
 
-// Aggiungi un nuovo vinile
+
 const addVinyl = (req, res) => {
     const { vinyl_name, artist, price, year, category_id, image_url } = req.body;
     const query = 'INSERT INTO vinyls (vinyl_name, artist, price, year, category_id, image_url) VALUES (?, ?, ?, ?, ?, ?)';
@@ -52,7 +52,7 @@ const addVinyl = (req, res) => {
     });
 };
 
-// Modifica un vinile esistente
+
 const updateVinyl = (req, res) => {
     const { id } = req.params;
     const { vinyl_name, artist, price, year, category_id, image_url } = req.body;
@@ -69,7 +69,6 @@ const updateVinyl = (req, res) => {
     });
 };
 
-// Elimina un vinile
 const deleteVinyl = (req, res) => {
     const { id } = req.params;
     const query = 'DELETE FROM vinyls WHERE id_vinyl = ?';
@@ -85,7 +84,7 @@ const deleteVinyl = (req, res) => {
     });
 };
 
-// Esporta i metodi
+
 module.exports = {
     getAllVinyls,
     getVinylById,

@@ -12,23 +12,23 @@ const PORT = 3000;
 
 app.use('/images', express.static('images'));
 
-// Middleware
+
 app.use(cors());
 app.use(bodyParser.json());
 
-// Serve i file statici dalla cartella 'public' (immagini, stili, script, ecc.)
+
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Servi l'index.html
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
-// Route per i vinili
+
 app.use('/api/vinyls', vinylsRoutes);
-app.use('/api/categories', categoriesRoutes);  // route delle categorie
-app.use('/api', loginRoutes);  // la rotta di login
-app.use('/api', registerRoutes); // la rotta di registrazione
+app.use('/api/categories', categoriesRoutes);  
+app.use('/api', loginRoutes);  
+app.use('/api', registerRoutes); 
 
 // Avvio del server
 app.listen(PORT, () => {

@@ -176,10 +176,10 @@ export default {
     `,
     data() {
         return {
-            vinyls: [], // Contiene i vinili
-            showEditForm: false, // Mostra il modulo di modifica
-            showAddForm: false, // Mostra il modulo di aggiunta
-            editVinylData: { // Dati del vinile da modificare
+            vinyls: [], 
+            showEditForm: false, 
+            showAddForm: false, 
+            editVinylData: { 
                 id_vinyl: null,
                 vinyl_name: '',
                 artist: '',
@@ -188,8 +188,8 @@ export default {
                 category_id: null,
                 image_url: ''
             },
-            newVinyl: { // Dati del nuovo vinile
-                id_vinyl: null, // Aggiunta dell'ID al nuovo vinile
+            newVinyl: { 
+                id_vinyl: null, 
                 vinyl_name: '',
                 artist: '',
                 price: 0,
@@ -197,12 +197,12 @@ export default {
                 category_id: null,
                 image_url: ''
             },
-            categories: [], // Contiene le categorie dei vinili
-            nickname: '' // Valore iniziale vuoto
+            categories: [], 
+            nickname: '' 
         };
     },
     created() {
-        // Recupera i dati dal server per i vinili
+        
         axios.get('http://localhost:3000/api/vinyls')
             .then(response => {
                 this.vinyls = response.data;
@@ -211,7 +211,7 @@ export default {
                 console.error('Errore nel recupero dei vinili:', error);
             });
     
-        // Recupera le categorie dal server
+        
         axios.get('http://localhost:3000/api/categories')
             .then(response => {
                 this.categories = response.data;
@@ -230,16 +230,16 @@ export default {
         },
 
         
-        // Mostra il modulo di modifica con i dati del vinile selezionato
+        
         editVinyl(vinyl) {
             this.editVinylData = { ...vinyl };
             this.showEditForm = true;
         },
     
-        // Chiude il modulo di modifica senza salvare
+        
         closeEditForm() {
             this.showEditForm = false;
-            this.editVinylData = { // Reset dei dati
+            this.editVinylData = { 
                 id_vinyl: null,
                 vinyl_name: '',
                 artist: '',
@@ -250,13 +250,13 @@ export default {
             };
         },
     
-        // Modifica il vinile nel database
+        
         updateVinyl() {
             const updatedVinyl = { ...this.editVinylData };
     
             axios.put(`http://localhost:3000/api/vinyls/${updatedVinyl.id_vinyl}`, updatedVinyl)
                 .then(response => {
-                    // Aggiorna il vinile nella lista
+                    
                     const index = this.vinyls.findIndex(v => v.id_vinyl === updatedVinyl.id_vinyl);
                     if (index !== -1) {
                         this.vinyls[index] = { ...this.vinyls[index], ...updatedVinyl };
@@ -270,13 +270,13 @@ export default {
                 });
         },
     
-        // Elimina un vinile
+       
         deleteVinyl(id) {
             const confirmDelete = confirm('Sei sicuro di voler eliminare questo vinile?');
             if (confirmDelete) {
                 axios.delete(`http://localhost:3000/api/vinyls/${id}`)
                     .then(response => {
-                        // Rimuovi il vinile dalla lista
+                        
                         this.vinyls = this.vinyls.filter(v => v.id_vinyl !== id);
                         alert('Vinile eliminato con successo');
                     })
@@ -287,9 +287,8 @@ export default {
             }
         },
     
-        // Aggiungi un nuovo vinile con controllo sull'unicità dell'ID
+        
         addVinyl() {
-            // Controlla se l'ID è già esistente
             if (this.vinyls.some(v => v.id_vinyl === this.newVinyl.id_vinyl)) {
                 alert('Errore: L\'ID del vinile esiste già!');
                 return;
@@ -297,10 +296,10 @@ export default {
     
             axios.post('http://localhost:3000/api/vinyls', this.newVinyl)
                 .then(response => {
-                    this.vinyls.push(response.data); // Aggiungi il nuovo vinile alla lista
-                    this.showAddForm = false; // Chiudi il modulo di aggiunta
+                    this.vinyls.push(response.data); 
+                    this.showAddForm = false; 
                     alert('Vinile aggiunto con successo');
-                    this.newVinyl = { // Reset dei dati
+                    this.newVinyl = { 
                         id_vinyl: null,
                         vinyl_name: '',
                         artist: '',
@@ -316,10 +315,9 @@ export default {
                 });
         },
     
-        // Chiude il modulo di aggiunta senza salvare
         closeAddForm() {
             this.showAddForm = false;
-            this.newVinyl = { // Reset dei dati
+            this.newVinyl = { 
                 id_vinyl: null,
                 vinyl_name: '',
                 artist: '',
@@ -335,9 +333,9 @@ export default {
         logout() {
             localStorage.removeItem('nickname');
             localStorage.removeItem('role');
-            localStorage.removeItem('carrello'); // Svuota il carrello
+            localStorage.removeItem('carrello'); 
             alert('Logout effettuato con successo!');
-            this.$router.push('/login'); // Torna alla pagina di login
+            this.$router.push('/login'); 
             
           }
           

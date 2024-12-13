@@ -64,8 +64,8 @@ export default {
   data() {
     return {
       carrello: [],
-      nickname: '', // Valore iniziale vuoto
-      toastInstance: null, // Variabile per la gestione del toast
+      nickname: '', 
+      toastInstance: null, 
     };
   },
   created() {
@@ -73,7 +73,7 @@ export default {
     this.nickname = localStorage.getItem('nickname') || '';
   },
   mounted() {
-    // Inizializzare il toast all'avvio del componente
+    
     this.toastInstance = new bootstrap.Toast(this.$refs.toast);
   },
   methods: {
@@ -83,20 +83,20 @@ export default {
     },
     gestisciAcquisto() {
       if (!this.nickname || this.nickname.trim() === '') {
-        // Se non sei autenticato, reindirizza a /login
+       
         this.$router.push('/login');
       } else {
-        // Mostra il toast per l'acquisto completato
-        this.toastInstance.show(); // Mostra il toast
+       
+        this.toastInstance.show(); 
 
-        // Nascondi il toast dopo 3 secondi
+       
         setTimeout(() => {
           this.toastInstance.hide();
         }, 3000);
       }
     },
     chiudiToast() {
-      this.toastInstance.hide(); // Permette di chiudere manualmente il toast
+      this.toastInstance.hide(); 
     }
   },
   computed: {

@@ -1,14 +1,14 @@
 
 .img-icon {
-  width: 30px; /* Imposta la larghezza desiderata */
-  height: 30px; /* Imposta l'altezza desiderata */
-  cursor: pointer; /* Cambia il cursore al passaggio */
+  width: 30px; 
+  height: 30px; 
+  cursor: pointer; 
 }
 
 
 
 body {
-  background-color: #141414; /* Colore di esempio */
+  background-color: #141414; 
 }
 
 .navbg1{
@@ -46,19 +46,19 @@ body {
 }
 
 .login-form input {
-  background-color: #F9F8F8; /* Sfondo bianco */
-  color: #000; /* Testo nero */
+  background-color: #F9F8F8;
+  color: #000; 
   margin-bottom: 15px;
   padding: 10px;
   border: none;
   border-radius: 5px;
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 14px; /* Dimensione del testo */
+  font-size: 14px; 
 }
 
 .login-form input::placeholder {
-  color: #aaa; /* Colore del testo segnaposto */
+  color: #aaa; 
 }
 
 
@@ -99,12 +99,12 @@ body {
 }
 
 html, body {
-    height: 100%; /* Assicurati che il body riempia tutta la viewport */
+    height: 100%; 
     margin: 0;
 }
 
 footer {
-    margin-top: auto; /* Spinge il footer in fondo */
+    margin-top: auto; 
 }
 
 .bottoneindex{
@@ -119,14 +119,14 @@ footer {
 
 
 .accordion-button {
-  background-color: #F9F8F8; /* Colore di sfondo giallo */
-  color: black; /* Testo nero */
-  font-weight: bold; /* Testo in grassetto */
+  background-color: #F9F8F8; 
+  color: black;
+  font-weight: bold; 
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #F8C630; /* Colore di sfondo quando la sezione è aperta */
-  color: black; /* Testo nero */
+  background-color: #F8C630; 
+  color: black; 
 }
 
 .btnback{
@@ -205,7 +205,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Aggiungi questa riga per posizionarlo sopra */
+  z-index: 9999; 
 }
 
 .modal-container {
@@ -213,7 +213,7 @@ footer {
   padding: 20px;
   border-radius: 8px;
   width: 400px;
-  z-index: 10000; /* Aggiungi anche qui per essere sicuri che il modulo sia sopra */
+  z-index: 10000; 
   color: #000;
 }
 

@@ -25,11 +25,11 @@ export default {
     `,
     data() {
       return {
-        nickname: '' // Valore iniziale vuoto
+        nickname: '' 
       };
     },
     created() {
-      // Recupera il nickname dal localStorage
+      
       this.nickname = localStorage.getItem('nickname') || 'Utente';
     },
     methods:{
@@ -38,9 +38,9 @@ export default {
       logout() {
         localStorage.removeItem('nickname');
         localStorage.removeItem('role');
-        localStorage.removeItem('carrello'); // Svuota il carrello
+        localStorage.removeItem('carrello'); 
         alert('Logout effettuato con successo!');
-        this.$router.push('/login'); // Torna alla pagina di login
+        this.$router.push('/login'); 
       }
       
 

@@ -48,14 +48,14 @@ export default {
   
     data() {
       return {
-        vinyls: [],  // Contiene i vinili
-        carrello: [], // Contiene i prodotti selezionati
-        categories: [] // Contiene le categorie
+        vinyls: [],  
+        carrello: [], 
+        categories: [] 
       };
     },
   
     created() {
-      // Recupera i dati dal server per i vinili e le categorie
+      
       axios.get('http://localhost:3000/api/vinyls')
         .then(response => {
           this.vinyls = response.data;

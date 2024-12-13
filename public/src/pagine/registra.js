@@ -51,7 +51,7 @@ export default {
           cognome: this.cognome
         });
         alert('Registrazione avvenuta con successo!');
-        this.$router.push('/login'); // Reindirizza alla pagina di login
+        this.$router.push('/login'); 
       } catch (error) {
         console.error(error);
         alert('Errore durante la registrazione. Riprova!');

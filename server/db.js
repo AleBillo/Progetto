@@ -2,8 +2,8 @@ const mysql = require('mysql2');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // Cambia se necessario
-    password: '', // Cambia se necessario
+    user: 'root', 
+    password: '', 
     database: 'billo_vinils_sql'
 });
 

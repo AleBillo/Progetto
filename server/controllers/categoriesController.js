@@ -1,6 +1,5 @@
 const db = require('../db');
 
-// Ottieni tutte le categorie
 const getAllCategories = (req, res) => {
     const query = 'SELECT * FROM categories';
     db.query(query, (err, results) => {
