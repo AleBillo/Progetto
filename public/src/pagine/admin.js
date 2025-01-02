@@ -22,7 +22,7 @@ export default {
     </router-link>
   </div>
   
-  <!-- Modulo di modifica vinile -->
+  
   <div v-if="showEditForm" class="modal-overlay d-flex align-items-center justify-content-center">
     <div class="modal-container bg-light p-4 rounded shadow-lg">
       <h3 class="mb-3">Modifica Vinile</h3>
@@ -70,7 +70,7 @@ export default {
     </div>
   </div>
   
-  <!-- Modulo di aggiunta vinile -->
+ 
   <div v-if="showAddForm" class="modal-overlay d-flex align-items-center justify-content-center">
     <div class="modal-container bg-light p-4 rounded shadow-lg">
       <h3 class="mb-3">Aggiungi Nuovo Vinile</h3>
@@ -123,7 +123,8 @@ export default {
     </div>
   </div>
   
-  <!-- Lista dei vinili -->
+  
+
 <div class="container my-4">
   <h3 class="text-center text-light">Ecco il listino attuale</h3>
   <div v-if="vinyls.length > 0" class="row row-cols-1 row-cols-md-3 g-4">

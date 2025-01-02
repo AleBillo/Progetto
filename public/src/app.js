@@ -1,4 +1,3 @@
-
 import Home from './pagine/Home.js';
 import faq from './pagine/faq.js';
 import login from './pagine/login.js';

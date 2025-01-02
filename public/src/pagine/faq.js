@@ -5,7 +5,7 @@ const faq = {
         <h1 class="text-light text-center mb-4">Domande Frequenti (FAQ)</h1>
         <div class="accordion" id="faqAccordion">
             
-            <!-- Prima FAQ -->
+           
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -19,7 +19,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Seconda FAQ -->
+           
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -33,7 +33,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Terza FAQ -->
+            
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -47,7 +47,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Quarta FAQ -->
+           
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -61,7 +61,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Quinta FAQ -->
+           
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
@@ -75,7 +75,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Sesta FAQ -->
+           
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -89,7 +89,7 @@ const faq = {
                 </div>
             </div>
 
-            <!-- Settima FAQ -->
+          
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSeven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">

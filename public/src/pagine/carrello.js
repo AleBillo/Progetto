@@ -50,7 +50,8 @@ export default {
         </button>
       </div>
 
-      <!-- Toast for purchase confirmation -->
+   
+      
       <div ref="toast" class="toast align-items-center text-bg-success position-fixed bottom-0 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body">
