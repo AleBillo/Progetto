@@ -64,10 +64,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `email`, `nickname`, `password`, `name`, `surname`, `amministratore`) VALUES
-(1, 'admin@example.com', 'Paso', '$2b$10$zJ30l19/6BgIQHn4YBQWZeUEBHxb8G80mrR/vLH8xfk.p39Y9jE9m', 'Luca', 'Pasini', 1),
-(2, 'utente@example.com', 'Itsas', '$2b$10$Fwlr4CyrfZZlSnJsaFCate0CD3hQ5Xu2PJLUR8eTxsiDVo8FHl7DG', 'Matteo', 'Goga', 0),
-(3, 'lorenza.parrod@example.com', 'Hyuna', '$2b$10$ULx0slrzZgjgUOhOnm0OxeVL8rOh.mJoh2h0J1MZTZhfZWN5kY6XS', 'Lorenza', 'Parrod', 0);
-
+(1, 'admin@example.com', 'Billo', '$2b$10$zJ30l19/6BgIQHn4YBQWZeUEBHxb8G80mrR/vLH8xfk.p39Y9jE9m', 'Alessandro', 'Dominici', 1),
+(2, 'utente@example.com', 'MACK', '$2b$10$Fwlr4CyrfZZlSnJsaFCate0CD3hQ5Xu2PJLUR8eTxsiDVo8FHl7DG', 'Seck', 'Mactar', 0);
 -- --------------------------------------------------------
 
 --
