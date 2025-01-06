@@ -30,7 +30,7 @@ export default {
     },
     created() {
       
-      this.nickname = localStorage.getItem('nickname') || 'Utente';
+      this.nickname = localStorage.getItem('nickname') || 'Utente'; //salvo nel local storage
     },
     methods:{
 
@@ -40,7 +40,7 @@ export default {
         localStorage.removeItem('role');
         localStorage.removeItem('carrello'); 
         alert('Logout effettuato con successo!');
-        this.$router.push('/login'); 
+        this.$router.push('/login'); //valori per il computed nel local storage
       }
       
 

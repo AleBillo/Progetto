@@ -26,7 +26,7 @@ exports.registerUser = (req, res) => {
         }
 
         
-        bcrypt.hash(password, 10, (err, hashedPassword) => {
+        bcrypt.hash(password, 10, (err, hashedPassword) => { //hashing della password
             if (err) {
                 console.error('Errore durante l\'hashing della password:', err);
                 return res.status(500).json({ success: false, message: 'Errore nel server durante la registrazione' });

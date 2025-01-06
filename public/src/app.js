@@ -10,7 +10,7 @@ import Utente from './pagine/utente.js';
 const auth = {
     isLoggedIn: () => !!localStorage.getItem('nickname'),
     userRole: () => localStorage.getItem('role'), 
-};
+}; //valori per computed 
 
 const routes = [
     { path: '/', component: Home },

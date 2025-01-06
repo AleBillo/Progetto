@@ -22,7 +22,7 @@ exports.loginUser = (req, res) => {
 
         try {
             
-            const correctPassword = await bcrypt.compare(password, user.password);
+            const correctPassword = await bcrypt.compare(password, user.password); //compare la password hashata
 
             if (correctPassword) {
                 

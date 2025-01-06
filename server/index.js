@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); //middleware
 const bodyParser = require('body-parser');
 const path = require('path');
 const vinylsRoutes = require('./routes/vinylsRoutes');
@@ -12,9 +12,9 @@ const PORT = 3000;
 
 app.use('/images', express.static('images'));
 
-
+//creazione del middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json()); //richieste come json
 
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api/vinyls', vinylsRoutes);
 app.use('/api/categories', categoriesRoutes);  
 app.use('/api', loginRoutes);  
-app.use('/api', registerRoutes); 
+app.use('/api', registerRoutes); //api/user
 
 // Avvio del server
 app.listen(PORT, () => {

@@ -75,10 +75,7 @@ export default {
     <div class="modal-container bg-light p-4 rounded shadow-lg">
       <h3 class="mb-3">Aggiungi Nuovo Vinile</h3>
       <form @submit.prevent="addVinyl">
-        <div class="form-group mb-3">
-          <label for="id_vinyl" class="form-label">ID Vinile</label>
-          <input type="number" id="id_vinyl" v-model="newVinyl.id_vinyl" class="form-control" required />
-        </div>
+        
         <div class="form-group mb-3">
           <label for="vinyl_name" class="form-label">Nome Vinile</label>
           <input type="text" id="vinyl_name" v-model="newVinyl.vinyl_name" class="form-control" required />
@@ -190,7 +187,7 @@ export default {
                 image_url: ''
             },
             newVinyl: { 
-                id_vinyl: null, 
+                
                 vinyl_name: '',
                 artist: '',
                 price: 0,
@@ -290,18 +287,14 @@ export default {
     
         
         addVinyl() {
-            if (this.vinyls.some(v => v.id_vinyl === this.newVinyl.id_vinyl)) {
-                alert('Errore: L\'ID del vinile esiste già!');
-                return;
-            }
-    
+            
             axios.post('http://localhost:3000/api/vinyls', this.newVinyl)
                 .then(response => {
                     this.vinyls.push(response.data); 
                     this.showAddForm = false; 
                     alert('Vinile aggiunto con successo');
                     this.newVinyl = { 
-                        id_vinyl: null,
+                        
                         vinyl_name: '',
                         artist: '',
                         price: 0,

@@ -5,12 +5,12 @@ const {
     addVinyl, 
     updateVinyl, 
     deleteVinyl 
-} = require('../controllers/vinylsController');
+} = require('../controllers/vinylsController'); //richiamo i metodi creati nel controller e li associo
 
-const router = express.Router();
+const router = express.Router(); //crro un router 
 
-
-router.get('/', getAllVinyls);
+//associo a tutte le chiamate HTTP una rotta ed un metodo
+router.get('/', getAllVinyls); 
 
 
 router.get('/:id', getVinylById);
@@ -24,4 +24,4 @@ router.put('/:id', updateVinyl);
 
 router.delete('/:id', deleteVinyl);
 
-module.exports = router;
+module.exports = router; //esporto per essere visualizzato da file esterni (index.js)

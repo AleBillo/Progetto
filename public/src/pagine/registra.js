@@ -30,7 +30,7 @@ export default {
     </div>
   `,
 
-  data() {
+  data() { //variabili vuote
     return {
       email: '',
       nickname: '',
@@ -43,15 +43,15 @@ export default {
   methods: {
     async registerUser() {
       try {
-        const response = await axios.post('http://localhost:3000/api/users', {
+        const response = await axios.post('http://localhost:3000/api/users', { //chiamata con axios all'api nel 'index.js che collega alla rotta e poi al controller
           email: this.email,
           nickname: this.nickname,
           password: this.password,
           nome: this.nome,
-          cognome: this.cognome
+          cognome: this.cognome //dati passati
         });
         alert('Registrazione avvenuta con successo!');
-        this.$router.push('/login'); 
+        this.$router.push('/login'); //sposta in pagina di login
       } catch (error) {
         console.error(error);
         alert('Errore durante la registrazione. Riprova!');

@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     async loginUser() {
-      axios.post('http://localhost:3000/api/login', {
+      axios.post('http://localhost:3000/api/login', { //chiama all'api di login
         email: this.email,
         password: this.password
       })
@@ -36,10 +36,10 @@ export default {
         if (response.data.success) {
           const nickname = response.data.nickname;
           const role = response.data.role;
-          localStorage.setItem('nickname', nickname);
+          localStorage.setItem('nickname', nickname); //file utili 
           localStorage.setItem('role', role);
          
-          this.$router.push(role === 'admin' ? '/admin' : '/utente');
+          this.$router.push(role === 'admin' ? '/admin' : '/utente'); //push utile per la pagina dipende utente o admin
         } else {
           alert(response.data.message);
         }

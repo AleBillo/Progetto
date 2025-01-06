@@ -73,13 +73,14 @@ INSERT INTO `users` (`id_user`, `email`, `nickname`, `password`, `name`, `surnam
 --
 
 CREATE TABLE `vinyls` (
-  `id_vinyl` int(11) NOT NULL,
-  `vinyl_name` varchar(255) NOT NULL,
-  `artist` varchar(255) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `year` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `image_url` varchar(255) DEFAULT NULL
+  `id_vinyl` INT(11) NOT NULL AUTO_INCREMENT,
+  `vinyl_name` VARCHAR(255) NOT NULL,
+  `artist` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `year` INT(11) NOT NULL,
+  `category_id` INT(11) DEFAULT NULL,
+  `image_url` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id_vinyl`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
